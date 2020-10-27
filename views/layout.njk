@@ -10,8 +10,16 @@
 	<link rel="preload" href="/fonts/Gotham-Book.otf" as="font" type="font/otf" crossorigin="anonymous">	
 </head>
 <body>
-	<nav>
-		<img class="logo" src="assets/logo.png" />
+  <nav>
+		<div class="nav-logo"><img class="logo" src="assets/logo.png" /></div>
+		<div class="nav-items">
+			<a href="#">Categories</a>
+			<a href="#">Videos</a>		
+			<a href="#">Login</a>
+		</div>
+		<div class="expand-nav">
+			<img src="assets/new-hamburger-icon.png" />
+		</div>
 	</nav>
 	{% block content %}{% endblock %}
 <footer>

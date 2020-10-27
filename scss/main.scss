@@ -2,14 +2,19 @@
 
 $primary-bg: #000;
 $primary-text-color: #FF3B3B;
-$headerHeight: 50px;
-$globalPadding: 5px;
+$nav-hover-color: #FF3B3B;
+$header-height: 50px;
+$global-padding: 5px;
 $breakpoint: 768px;
-$primaryCopy: rgb(255, 255, 255);
-$headerCopy: rgb(52, 123, 239);
-$norwalPink: rgb(169, 50, 246);
+$secondary-text-color: rgb(255, 255, 255);
+$header-text-color: rgb(52, 123, 239);
+$norwal-text-color: rgb(169, 50, 246);
+$even-row: rgb(51, 51, 51);
+$odd-row: rgb(0, 0, 0);
 
 // END GLOBAL VARIABLES
+
+
 
 
 // FONT SETTINGS
@@ -48,7 +53,7 @@ body {
 	margin: 0;
 	font-family: Gotham,Helvetica,Arial,sans-serif;
 	&:first-child {
-		margin-bottom: $headerHeight;
+		margin-bottom: $header-height;
 	}
 }
 
@@ -61,15 +66,45 @@ p {
 	color: $primary-text-color;
 }
 
+.even-row {
+	background-color: $even-row;
+}
+
+.odd-row {
+	background-color: $odd-row;
+}
+
 nav {
 	position: fixed;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-content: center;
 	width: 100%;
-	padding: $globalPadding;
+	padding: $global-padding;
 	margin: 0px;
-	background-color: #fff;
+	background-color: #222;
 
 	.logo {
-		height: $headerHeight;
+		height: $header-height;
+	}
+
+	.expand-nav {
+		display: none;
+	}
+
+	.nav-items {
+    display: flex;
+		align-items: center;
+		a {
+			color: $secondary-text-color;
+			padding-right: 15px;
+			text-decoration: none;
+			&:hover {
+				color: $nav-hover-color;
+				text-decoration: underline;
+			}
+		}
 	}
 }
 
@@ -93,16 +128,40 @@ nav {
 // COMPONENT STYLES
 
 .comments {
-	.labels {
+	color: $secondary-text-color;
+	background-color: #222;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	
+	.labels, .list {
 		display: flex;
-		flex-direction: row;
 		div:first-child {
 			flex: 3;
 		}		
 		div {
-			flex: 1
+			flex: 1;
+		}
+		.comment, .from-user {
+			padding: 8px;
+		}
+		.rating {
+			background-color: #232323;
+			border: 1px solid #444;
+			width: fit-content;
+			padding: 8px;
+			margin-top: 5px;
+			.rate-down {
+				margin-left: 8px;
+			}
 		}
 	}
+
+	.labels {
+		flex-direction: row;
+		font-weight: 800;
+	}
+
 }
 
 // END COMPONENT STYLES
@@ -114,17 +173,17 @@ nav {
 // CONTENT SECTIONS
 
 .section1 {
-	padding-top: $globalPadding + $headerHeight;
+	padding-top: $global-padding + $header-height;
 
-	.some-text {
+	.cta-text {
 		font-size: 2rem;
 		padding: 1em;
 		h1 {
 			font-family: Gotham Book,Helvetica,Arial,sans-serif;
-			color: $headerCopy;
+			color: $header-text-color;
 		}
 		p {
-			color: $primaryCopy;
+			color: $primary-text-color;
 		}
 	}
 
@@ -144,7 +203,8 @@ nav {
 	.form-container {
 		font-size: 2rem;
 		padding: 1em;
-
+		align-self: flex-start;
+		
 		h2 {
 			font-size: .85em;
 			text-align: center;
@@ -208,4 +268,30 @@ input {
 		display: block;
 		color: red;
 	}
+
+	nav {
+		position: fixed;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-content: center;
+		width: 100%;
+		padding: $global-padding;
+		margin: 0px;
+		background-color: #222;
+	
+		.logo {
+			height: $header-height;
+		}
+	
+		.nav-items {
+			display: none;
+		}
+
+		.expand-nav {
+			display: block;
+			margin-right: 15px;
+		}
+	}
+
 }
