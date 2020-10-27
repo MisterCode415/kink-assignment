@@ -6,7 +6,7 @@
 <section class="content-section section1">
   <div class="column cta-text">
     <h1>Narwallian Jousting</h1>
-    <p>Esquisite and forbidden, feast on forbidden aquadic pegging like you've never seen dreamed of before! Extreme poly species humiliation with no holding back. The safet word is "cuttlefish".</p>
+    <p>Esquisite and forbidden, feast on forbidden aquadic pegging like you've never seen dreamed of before! Extreme poly species humiliation with no holding back. The safe word is "cuttlefish".</p>
 
   </div>
   <div class="column image">
@@ -19,13 +19,11 @@
 <!-- FORM AND COMMENTS CONTENT SECTION -->
 <section class="content-section section2">
   <div class="column form-container">
-    <h2>Sign up for your 30 day Free Trial!</h2>
-    <form method="post" id="signupForm" onsubmit="return validate(this)" action="/" name="signupForm">
-      <input name="first" placeholder="first" tabindex="1" />
-      <input name="last" placeholder="last" tabindex="2" />
-      <input name="email" placeholder="your@email.com"  tabindex="3" />
-      <input name="password" placeholder="password" type="password" tabindex="4" />
-      <button class="submit-button" type="submit">Sign Up</button>
+    <h2>ADD A COMMENT</h2>
+    <form method="post" id="commentForm" onsubmit="return validate()" action="/" name="signupForm">
+      <input name="username" placeholder="username" tabindex="1" />
+      <input name="comment" placeholder="comment" tabindex="2" />
+      <button class="submit-button" type="submit">Submit</button>
     </form>
   </div>
 
@@ -34,6 +32,26 @@
       <div>Comment</div>
       <div>Name</div>
     </div>
+
+      <!-- FORM SUBMISSION FEEDBACK BLOCK -->
+      {% if formData %}
+        <div class="list">
+          <div class="comment odd-row" id="comment0">
+            <div class="body">
+              {{ formData.comment }}
+              <div class="rating">
+                <span class="rate-up" title="Like">👍 0</span><span class="rate-down" title="Dislike">👎 0</span>
+              </div>
+            </div>
+          </div>
+          <div class="from-user  even-row">
+            <div class="author">{{ formData.username }}</div>
+            <div class="date"><i>{{ formData.timestamp }}</i></div>      
+          </div>    
+        </div>        
+      {% endif %}
+      <!-- END FORM SUBMISSION FEEDBACK BLOCK -->  
+
 
     <div class="list">
       <div class="comment even-row" id="comment1">

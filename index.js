@@ -17,7 +17,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 
 // allow for POST data to be parsed
-app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Logger.
@@ -41,9 +41,9 @@ app.get('/', (request, response) => {
 });
 
 app.post('/', (request, response) => {
-	const options = { pageTitle: 'Homepage', formData: request.body};	
-	return response.render('home', options)
-})
+	const options = { pageTitle: 'Homepage', formData: { ...request.body, timestamp: new Date().toDateString() } };	
+	return response.render('home', options);
+});
 
 app.listen(PORT, () => {
 	logger.log({ level: 'info', message: `listening on ${PORT}` });
