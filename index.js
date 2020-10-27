@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const nunjucks = require('nunjucks');
 const path = require('path');
 const winston = require('winston');
+const bodyParser = require('body-parser');
 
 const PORT = 3000;
 
@@ -14,6 +15,10 @@ const app = express();
 
 // Static assets.
 app.use(express.static(path.join(__dirname, 'public')));
+
+// allow for POST data to be parsed
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
 
 // Logger.
 app.use(morgan(':method :url :status :response-time ms', {
@@ -34,6 +39,11 @@ app.get('/', (request, response) => {
 	const options = { pageTitle: 'Homepage' };
 	return response.render('home', options);
 });
+
+app.post('/', (request, response) => {
+	const options = { pageTitle: 'Homepage', formData: request.body};	
+	return response.render('home', options)
+})
 
 app.listen(PORT, () => {
 	logger.log({ level: 'info', message: `listening on ${PORT}` });

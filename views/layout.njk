@@ -10,7 +10,20 @@
 	<link rel="preload" href="/fonts/Gotham-Book.otf" as="font" type="font/otf" crossorigin="anonymous">	
 </head>
 <body>
-  <nav>
+	<!-- FORM SUBMISSION FEEDBACK BLOCK -->
+	{% if formData %}
+		<div class="overlay-modal">
+			<div class="inner-modal">
+				<h2>Thank you for signing up {{ formData.first }} {{ formData.last }}! We know you will enjoy</h2>
+				<p>Please check your inbox at {{ formData.email }} to confirm your account.</p>
+				<div class="dismiss" onClick="dismiss()">CLOSE</div>
+			</div>
+		</div>
+	{% endif %}
+	<!-- END FORM SUBMISSION FEEDBACK BLOCK -->
+
+  <!-- NAVIGATION BLOCK -->
+	<nav>
 		<div class="nav-logo"><img class="logo" src="assets/logo.png" /></div>
 		<div class="nav-items">
 			<a href="#">Categories</a>
@@ -21,9 +34,11 @@
 			<img src="assets/new-hamburger-icon.png" />
 		</div>
 	</nav>
+	<!-- END NAVIGATION BLOCK -->
 	{% block content %}{% endblock %}
 <footer>
 	{% block footer %}{% endblock %}
 </footer>
+<script type="text/javascript" src="js/home.js"></script>
 </body>
 </html>
