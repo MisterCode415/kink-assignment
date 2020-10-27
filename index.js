@@ -41,7 +41,9 @@ app.get('/', (request, response) => {
 });
 
 app.post('/', (request, response) => {
-	const options = { pageTitle: 'Homepage', formData: { ...request.body, timestamp: new Date().toDateString() } };	
+	// ES6 doesn't support spreading so this was failing ESLINT
+	// const options = { pageTitle: 'Homepage', formData: { ...request.body, timestamp: new Date().toDateString() } };	
+	const options = { pageTitle: 'Homepage', formData: { username: request.body.username, comment: request.body.comment, timestamp: new Date().toDateString() } };	
 	return response.render('home', options);
 });
 

@@ -20,13 +20,14 @@
 <section class="content-section section2">
   <div class="column form-container">
     <h2>ADD A COMMENT</h2>
-    <form method="post" id="commentForm" onsubmit="return validate()" action="/" name="signupForm">
+    <form method="post" id="commentForm"  action="/" name="commentForm">
       <input name="username" placeholder="username" tabindex="1" />
       <input name="comment" placeholder="comment" tabindex="2" />
       <button class="submit-button" type="submit">Submit</button>
     </form>
   </div>
 
+  <!-- COMMENTS BLOCK -->
   <div class="column comments">
     <div class="labels">
       <div>Comment</div>
@@ -128,6 +129,7 @@
       </div>    
     </div>
   </div>
+  <!-- END COMMENTS BLOCK -->
   <!-- END FORM AND COMMENTS CONTENT SECTION -->  
 </section>
 {% endblock %}

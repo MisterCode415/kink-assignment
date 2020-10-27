@@ -4,6 +4,7 @@
  * It could be improved in many ways with regards to data integrity
  * 
  * @author Brian Kenny <papaviking@gmail.com>
+ * @version 1.0
  * @return {boolean} - triggers a form post or prevents submission based on passing validation criteria
  * @todo write regex that checks for data legnth and cleans from injection attack
  * */
@@ -32,3 +33,23 @@ function validate() {
 
 	return errors.length ? false : true;
 }
+
+/**
+ * Binds form post dom load to validate on submission
+ * 
+ * @author Brian Kenny <papaviking@gmail.com>
+ * @version 1.0
+ */
+function bindForm() {
+	document.getElementById('commentForm').onsubmit = validate;
+}
+
+/**
+ * Onload binding: down and dirty, french vanilla.
+ * 
+ * @author Brian Kenny <papaviking@gmail.com>
+ * @version 1.0
+ */
+window.onload = function () {
+	bindForm();
+};
