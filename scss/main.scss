@@ -1,8 +1,55 @@
+// GLOBAL VARIABLES
+
 $primary-bg: #000;
 $primary-text-color: #FF3B3B;
+$headerHeight: 50px;
+$globalPadding: 5px;
+$breakpoint: 768px;
+$primaryCopy: rgb(255, 255, 255);
+$headerCopy: rgb(52, 123, 239);
+$norwalPink: rgb(169, 50, 246);
+
+// END GLOBAL VARIABLES
+
+
+// FONT SETTINGS
+
+@font-face {
+	font-display: swap;
+	font-family: Gotham;
+	src: url(/fonts/Gotham-Light.otf) format("opentype")
+}
+
+@font-face {
+	font-display: swap;
+	font-family: Gotham;
+	font-weight: 700;
+	src: url(/fonts/Gotham-Bold.otf) format("opentype")
+}
+
+@font-face {
+	font-display: swap;
+	font-family: Gotham Medium;
+	src: url(/fonts/Gotham-Medium.otf) format("opentype")
+}
+
+@font-face {
+	font-display: swap;
+	font-family: Gotham Book;
+	src: url(/fonts/Gotham-Book.otf) format("opentype")
+}
+
+
+
+// GLOBAL STYLES
 
 body {
-	background-color: $primary-bg
+	background-color: $primary-bg;
+	margin: 0;
+	font-family: Gotham,Helvetica,Arial,sans-serif;
+	&:first-child {
+		margin-bottom: $headerHeight;
+	}
 }
 
 h1,
@@ -12,4 +59,153 @@ h4,
 h5,
 p {
 	color: $primary-text-color;
+}
+
+nav {
+	position: fixed;
+	width: 100%;
+	padding: $globalPadding;
+	margin: 0px;
+	background-color: #fff;
+
+	.logo {
+		height: $headerHeight;
+	}
+}
+
+.column {
+	flex: 1;
+	//border: 1px solid white;
+}
+
+.content-section {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+// END GLOBAL STYLES
+
+
+
+
+
+// COMPONENT STYLES
+
+.comments {
+	.labels {
+		display: flex;
+		flex-direction: row;
+		div:first-child {
+			flex: 3;
+		}		
+		div {
+			flex: 1
+		}
+	}
+}
+
+// END COMPONENT STYLES
+
+
+
+
+
+// CONTENT SECTIONS
+
+.section1 {
+	padding-top: $globalPadding + $headerHeight;
+
+	.some-text {
+		font-size: 2rem;
+		padding: 1em;
+		h1 {
+			font-family: Gotham Book,Helvetica,Arial,sans-serif;
+			color: $headerCopy;
+		}
+		p {
+			color: $primaryCopy;
+		}
+	}
+
+	.image {
+	//	max-width: 50%;
+		display: flex;
+		justify-content: center;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+.section2 {
+	.form-container {
+		font-size: 2rem;
+		padding: 1em;
+
+		h2 {
+			font-size: .85em;
+			text-align: center;
+			margin-block-start: 0.83em;
+			margin-block-end: 0.83em;
+			margin-inline-start: 0px;
+			margin-inline-end: 0px;
+		}
+	}
+}
+
+// END CONTENT SECTIONS
+
+
+
+
+// FORM STYLES REPURPOSED FROM KINK.COM
+button {
+	text-shadow: 1px 1px 2px #000;
+	border: 0;
+	border-radius: 2px;
+	color: #fff;
+	cursor: pointer;
+	display: block;
+	font-family: Gotham,Helvetica,Arial,sans-serif;
+	font-size: 16px;
+	font-size: 1rem;
+	max-width: 100%;
+	padding: .625rem;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	width: 100%;
+	background-color: #d72029;
+}
+
+input {
+	border: 0;
+	border-radius: 2px;
+	box-shadow: inset 0 2px 3px 0 rgba(0,0,0,.5);
+	color: #000;
+	font-family: Gotham,Helvetica,Arial,sans-serif;
+	font-size: 16px;
+	font-size: 1rem;
+	height: 38.4px;
+	height: 2.4rem;
+	padding: 0 0 0 .5rem;
+	width: 100%;
+}
+
+
+
+// RESPONSIVE OVERRIDES
+
+@media (max-width: 768px) {
+	.content-section {
+		display: block;
+		color: red;
+	}
 }

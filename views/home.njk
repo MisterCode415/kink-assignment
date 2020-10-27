@@ -1,5 +1,51 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-<h1>Hello, world!</h1>
+
+<section class="content-section section1">
+  <div class="column some-text">
+    <h1>Narwallian Jousting</h1>
+    <p>Esquisite and forbidden, feast on forbidden aquadic pegging like you've never seen dreamed of before! Extreme poly species humiliation with no holding back. The safety word is "cuttlefish"</p>
+
+  </div>
+  <div class="column image">
+    <image src="assets/placeholder.png" />
+  </div>
+</section>
+
+<section class="content-section section2">
+  <div class="column form-container">
+    <h2>Sign up for your 30 day Free Trial</h2>
+    <form method="post" action="/" name="signupForm">
+      <input name="first" placeholder="first" tabindex="1" />
+      <input name="last" placeholder="last" tabindex="2" />
+      <input name="email" placeholder="your@email.com"  tabindex="3" />
+      <input name="password" placeholder="password" type="password" tabindex="4" />
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+
+
+<div class="column comments">
+  <div class="labels">
+    <div>Comment</div>
+    <div>Name</div>
+  </div>
+  <div class="list">
+    <div class="comment" id="comment1">
+      <div class="body">
+        Mona and I are pee-buddies: last I checked in, she couldn't pee in front of a crowd, and, goes what -- NEITHER COULD I. What a bummer.-Hades
+        <div class="rating">
+          <span class="rate-up" title="Like">👍 10</span><span class="rate-down" title="Dislike">👎 0</span>
+        </div>
+      </div>
+      <div class="from-user">
+        <div class="author">vvlaovich777</div>
+        <div class="date"><i>Aug 10, 2020</i></div>      
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
 {% endblock %}

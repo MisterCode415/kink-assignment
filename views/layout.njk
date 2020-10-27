@@ -4,8 +4,15 @@
 	<meta charset="utf-8">
 	<title>{{ pageTitle }}</title>
 	<link rel="stylesheet" href="/css/main.css"/>
+	<link rel="preload" href="/fonts/Gotham-Light.otf" as="font" type="font/otf" crossorigin="anonymous">	
+	<link rel="preload" href="/fonts/Gotham-Bold.otf" as="font" type="font/otf" crossorigin="anonymous">	
+	<link rel="preload" href="/fonts/Gotham-Medium.otf" as="font" type="font/otf" crossorigin="anonymous">	
+	<link rel="preload" href="/fonts/Gotham-Book.otf" as="font" type="font/otf" crossorigin="anonymous">	
 </head>
 <body>
+	<nav>
+		<img class="logo" src="assets/logo.png" />
+	</nav>
 	{% block content %}{% endblock %}
 <footer>
 	{% block footer %}{% endblock %}

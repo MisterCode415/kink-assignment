@@ -7,7 +7,7 @@
     "build:sass": "node-sass -r --output-style compressed scss/main.scss -o ./public/css",
     "watch:sass": "npm run build:sass && npm run build:sass -- -w"
   },
-  "author": "YOURNAMEHERE <USERNAME@kink.com>",
+  "author": "Brian Kenny <papaviking@kink.com>",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
