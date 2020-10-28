@@ -20,6 +20,9 @@
 <section class="content-section section2">
   <div class="column form-container">
     <h2>ADD A COMMENT</h2>
+    {% if formData %}
+    <div class="submission-success">COMMENT ADDED</div>
+    {% endif %}
     <form method="post" id="commentForm"  action="/" name="commentForm">
       <input name="username" placeholder="username" tabindex="1" />
       <input name="comment" placeholder="comment" tabindex="2" />
@@ -45,7 +48,7 @@
               </div>
             </div>
           </div>
-          <div class="from-user  even-row">
+          <div class="from-user odd-row">
             <div class="author">{{ formData.username }}</div>
             <div class="date"><i>{{ formData.timestamp }}</i></div>      
           </div>    

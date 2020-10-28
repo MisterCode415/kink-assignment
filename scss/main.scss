@@ -118,7 +118,14 @@ nav {
 	align-items: center;
 }
 
-.errorState {
+.submission-success {
+	color: $norwal-text-color;
+	border: 1px solid $norwal-text-color;
+	padding: 15px;
+	margin-bottom: 10px;
+}
+
+.error-state {
 	border: 1px solid red;
 }
 

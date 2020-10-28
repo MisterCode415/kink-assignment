@@ -23,11 +23,11 @@ function validate() {
 	fields.forEach(field=>{
 		const nextField = document.getElementsByName(field[0])[0];
 		// reset fields
-		nextField.classList.remove('errorState');
+		nextField.classList.remove('error-state');
 
 		if (!nextField.value.match(field[1])) {
 			errors.push(field);
-			nextField.classList.add('errorState');
+			nextField.classList.add('error-state');
 		}
 	});
 
